@@ -1,6 +1,32 @@
 import Lottie from "lottie-react";
+import { useContext } from "react";
+import registerLottieData from '../../assets/lottie/register.json';
+import AuthContext from "../../context/AuthContext/AuthContext";
+import { Link } from "react-router-dom";
 
 const Register = () => {
+
+  const { createUser } = useContext(AuthContext);
+
+  const handleRegister = e => {
+    e.preventDefault();    
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    console.log(email, password)
+    // passwrod validation
+
+    createUser(email, password)
+      .then(result => {
+      console.log(result.user)
+      })
+      .catch(error => {
+      console.log(error.message)
+    })
+  }
+
+
+
   return (
     <div className="hero bg-base-200 min-h-screen">
       <div className="hero-content flex-col lg:flex-row-reverse">
@@ -34,9 +60,11 @@ const Register = () => {
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                Have An acount Login please ?
+                <a
+                  href="/SignIn"
+                  className=" text-green-300 font-mono"
+                >SignIn</a>
               </label>
             </div>
             <div className="form-control mt-6">

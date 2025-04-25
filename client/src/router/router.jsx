@@ -17,31 +17,30 @@ const router = createBrowserRouter([
     errorElement: <h2>Route not found</h2>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/jobs',
+        path: "/jobs",
         element: <JobDetails></JobDetails>,
-       
       },
       {
-        path: '/jobApply',
-        element: <JobApply></JobApply>
+        path: "/jobApply",
+        element: <JobApply></JobApply>,
       },
       {
-        path: '/myApplications',
-        element: <MyApplications></MyApplications>
+        path: "/myApplications",
+        element: <MyApplications></MyApplications>,
       },
       {
-        path: 'register',
-        element: <Register></Register>
+        path: "register",
+        element: <Register></Register>,
       },
       {
-        path: 'signIn',
-        element: <SignIn></SignIn>
-      }
-    ]
+        path: "/SignIn",
+        element: <SignIn></SignIn>,
+      },
+    ],
   },
 ]);
 
