@@ -60,10 +60,17 @@ const Navbar = () => {
         </div>
         <a className="btn btn-ghost text-xl">
           <img className="w-12" src={logo} alt="" />
-          <h3 className="text-3xl">
-            {" "}
-            <NavLink to="/">Job Portal</NavLink>
-          </h3>
+          {user ? (
+            <>{user.displayName}</>
+          ) : (
+            <>
+              {" "}
+              <h3 className="text-3xl">
+                {" "}
+                <NavLink to="/">Job Portal</NavLink>
+              </h3>
+            </>
+          )}
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
