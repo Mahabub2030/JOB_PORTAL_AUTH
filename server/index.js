@@ -57,6 +57,11 @@ async function run() {
               applicant_email: email
           };
           const result = await jobApplicationCollection.find(query).toArray();
+
+          //   it is not profational way
+          for (const application of result) {
+              console.log(application.job_id)
+          }
           res.send(result)
       });
       
