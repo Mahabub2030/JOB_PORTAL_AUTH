@@ -50,12 +50,28 @@ async function run() {
       res.send(result);
     });
 
-    // job application apis
+      // job application apis
+      app.get("/job-applications", async (req, res) => {
+          const email = req.query.email;
+          const query = {
+              applicant_email: email
+          };
+          const result = await jobApplicationCollection.find(query).toArray();
+          res.send(result)
+      });
+      
+
+
     app.post("/job-applications", async (req, res) => {
       const application = req.body;
       const result = await jobApplicationCollection.insertOne(application);
       res.send(result);
     });
+      
+      
+      
+      
+      
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
