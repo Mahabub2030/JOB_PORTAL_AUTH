@@ -5,7 +5,7 @@ import useAuth from "../../hooks/useAuth";
 const JobApply = () => {
   const { id } = useParams();
   const { user } = useAuth();
-  console.log(id,user);
+  // console.log(id,user);
 
   const submitJobApplication = (e) => {
     e.preventDefault();
@@ -14,7 +14,15 @@ const JobApply = () => {
     const github = form.github.value;
     const resume = form.resume.value;
 
-    console.log(linkedIn, github, resume);
+    // console.log(linkedIn, github, resume);
+
+    const jobApplication = {
+      job_id: id,
+      applicant_email: user.email,
+      linkedIn,
+      github,
+      resume
+    }
   };
 
   return (
