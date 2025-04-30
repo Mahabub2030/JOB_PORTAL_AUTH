@@ -20,6 +20,7 @@ const MyPostedJobs = () => {
           {/* head */}
           <thead>
             <tr>
+              
               <th></th>
               <th>Job Title</th>
               <th>Deadline</th>
