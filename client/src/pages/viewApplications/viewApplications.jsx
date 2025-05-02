@@ -2,7 +2,7 @@
 const viewApplications = () => {
     return (
         <div>
-            <h2 className="text-2xl">Application for this job</h2>
+            <h2>applcotion post </h2>
         </div>
     );
 };
