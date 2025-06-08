@@ -2,7 +2,7 @@
 const viewApplications = () => {
     return (
         <div>
-            <h2>applcotion post </h2>
+            <h2>appilcaton post page here </h2>
         </div>
     );
 };
